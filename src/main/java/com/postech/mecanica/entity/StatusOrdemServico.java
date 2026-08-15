@@ -1,0 +1,16 @@
+package com.postech.mecanica.entity;
+
+public enum StatusOrdemServico {
+    CRIADA,
+    EM_DIAGNOSTICO,
+    DIAGNOSTICO_CONCLUIDO,
+    PENDENTE_ESTOQUE,
+    PENDENTE_NOTIFICACAO_CLIENTE,
+    PENDENTE_APROVACAO_CLIENTE,
+    APROVADA,
+    CANCELADA,
+    EM_EXECUCAO,
+    FINALIZADA,
+    PENDENTE_ENTREGA,
+    ENTREGUE
+}
