@@ -2,6 +2,7 @@ package com.postech.mecanica.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -51,7 +52,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // públicos: login e consulta de status da OS
                         .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers("/ordens-servicos/*/status").permitAll()
+                        .requestMatchers("/ordens-servicos/*/status",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs.yaml")
+                        .permitAll()
+                        .requestMatchers(HttpMethod.GET, "/ordens-servicos/{id}").permitAll()
 
                         // ordem de serviço: gerente e mecânico podem criar/atualizar
                         .requestMatchers("/ordens-servicos/**").hasAnyRole("GERENTE", "MECANICO")
