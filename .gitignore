@@ -1,10 +1,43 @@
-HELP.md
+# ===== Maven =====
 target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
-### STS ###
+# ===== Logs / Outputs de execução =====
+*.log
+*.out
+mvn-*.log
+mvn-*.out
+verify*.log
+verify*.out
+
+# ===== Cobertura / Análise (JaCoCo, Sonar) =====
+jacoco.exec
+*.exec
+.scannerwork/
+
+# ===== IDEs =====
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Eclipse / STS
 .apt_generated
 .classpath
 .factorypath
@@ -12,22 +45,33 @@ target/
 .settings
 .springBeans
 .sts4-cache
+bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# ===== Sistema operacional =====
+.DS_Store
+Thumbs.db
+
+# ===== Ambiente / Segredos =====
+.env
+.env.local
+application-local.properties
+application-secrets.properties
+*.pem
+*.key
+
+# ===== Docker (opcional: manter se quiser versionar volumes locais fora) =====
+# Dockerfile e docker-compose.yml continuam versionados propositalmente
+
+# ===== Outros artefatos de build =====
+*.class
+*.jar
+*.war
+!.mvn/wrapper/maven-wrapper.jar
+*.original
